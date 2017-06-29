@@ -1,0 +1,12 @@
+- name: Open port {{ targetPort }} in defaultGroup security group firewall
+  ec2_group:
+    name: defaultGroup
+    description: Default streamShift security group
+    region: eu-central-1
+    purge_rules: false
+    purge_rules_egress: false
+    rules:
+      - proto: tcp
+        from_port: "{{ targetPort }}"
+        to_port: "{{ targetPort }}"
+        cidr_ip: 0.0.0.0/0

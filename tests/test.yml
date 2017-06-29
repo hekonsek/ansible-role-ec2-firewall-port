@@ -1,0 +1,5 @@
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - { role: ../ec2-firewall-port, vars: {targetPort: 80} }
