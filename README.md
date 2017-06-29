@@ -24,11 +24,12 @@ You can specify AWS credentials either in Boto file (for example `~/.boto`) or u
 ## Example playbook
 
 ```
+# Expose port 80 to the outside world
 - hosts: localhost
   connection: local
   gather_facts: false
   roles:
-    - { role: hekonsek.ec2-firewal-port,0.0, vars: {targetPort} }
+    - { role: hekonsek.ec2-firewal-port,0.0, vars: {targetPort: 80} }
 ```
 
 ## License
