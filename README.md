@@ -14,10 +14,11 @@ You can specify AWS credentials either in Boto file (for example `~/.boto`) or u
 
 ## Installation 
 
-    ansible-galaxy install hekonsek.ec2-firewal-port,0.1
+    ansible-galaxy install hekonsek.ec2-firewal-port,0.2
 
 ## Role variables
 
+- `region` - AWS region to use. Default region is `us-east-1` i.e. the cheapest one.
 - `group` - name of the security group to create and use. Default value is `default`.
 
 ## Example playbook
@@ -28,7 +29,7 @@ You can specify AWS credentials either in Boto file (for example `~/.boto`) or u
   connection: local
   gather_facts: false
   roles:
-    - { role: hekonsek.ec2-firewal-port,0.1, vars: {targetPort: 80} }
+    - { role: hekonsek.ec2-firewal-port,0.2, vars: {targetPort: 80} }
 ```
 
 ## License

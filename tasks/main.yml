@@ -2,7 +2,7 @@
   ec2_group:
     name: "{{ group }}"
     description: Default security group
-    region: eu-central-1
+    region: "{{ region }}"
     purge_rules: false
     purge_rules_egress: false
     rules:
